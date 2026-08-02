@@ -1,5 +1,6 @@
 #include "math.h"
 #include <stdexcept>
+#include <cmath>
 
 long long factorial(long long n)
 {
@@ -13,22 +14,22 @@ long long factorial(long long n)
     return result;
 }
 
-long long add(long long a, long long b)
+double add(double a, double b)
 {
     return a + b;
 }
 
-long long subtract(long long a, long long b)
+double subtract(double a, double b)
 {
     return a - b;
 }
 
-long long multiply(long long a, long long b)
+double multiply(double a, double b)
 {
     return a * b;
 }
 
-long long divide(long long a, long long b)
+double divide(double a, double b)
 {
     if (b == 0) {
         throw std::invalid_argument("Division by zero is not allowed.");
@@ -36,19 +37,13 @@ long long divide(long long a, long long b)
     return a / b;
 }
 
-long long power(long long base, long long exponent)
+double power(double base, double exponent)
 {
     if (base == 0 && exponent == 0) {
         throw std::invalid_argument("0 raised to the power of 0 is undefined.");
     }
-    if (exponent < 0) {
 
-    }
-    long long result = 1;
-    for (long long i = 0; i < exponent; ++i) {
-        result *= base;
-    }
-    return result;
+	return std::pow(base, exponent);
 }
 
 long long fibonacci(long long n)

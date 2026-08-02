@@ -2,15 +2,15 @@
 
 long long factorial(long long n);
 
-long long add(long long a, long long b);
+double add(double a, double b);
 
-long long subtract(long long a, long long b);
+double subtract(double a, double b);
 
-long long multiply(long long a, long long b);
+double multiply(double a, double b);
 
-long long divide(long long a, long long b);
+double divide(double a, double b);
 
-long long power(long long base, long long exponent);
+double power(double base, double exponent);
 
 long long fibonacci(long long n);
 

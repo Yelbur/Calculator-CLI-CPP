@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
                 throw std::invalid_argument("Usage: cli add <a> <b>");
 			}
 
-            std::cout << add(std::stoll(argv[2]), std::stoll(argv[3])) << '\n';
+            std::cout << add(std::stod(argv[2]), std::stod(argv[3])) << '\n';
         }
         else if (command == "subtract")
         {
@@ -62,7 +62,7 @@ int main(int argc, char* argv[]) {
 			}
 
 
-            std::cout << subtract(std::stoll(argv[2]), std::stoll(argv[3])) << '\n';
+            std::cout << subtract(std::stod(argv[2]), std::stod(argv[3])) << '\n';
         }
         else if (command == "multiply")
         {
@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
                 throw std::invalid_argument("Usage: cli multiply <a> <b>");
 			}
 
-            std::cout << multiply(std::stoll(argv[2]), std::stoll(argv[3])) << '\n';
+            std::cout << multiply(std::stod(argv[2]), std::stod(argv[3])) << '\n';
         }
         else if (command == "divide")
         {
@@ -78,7 +78,7 @@ int main(int argc, char* argv[]) {
                 throw std::invalid_argument("Usage: cli divide <a> <b>");
 			}
 
-            std::cout << divide(std::stoll(argv[2]), std::stoll(argv[3])) << '\n';
+            std::cout << divide(std::stod(argv[2]), std::stod(argv[3])) << '\n';
         }
         else if (command == "power")
         {
@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
                 throw std::invalid_argument("Usage: cli power <base> <exponent>");
 			}
 
-            std::cout << power(std::stoll(argv[2]), std::stoll(argv[3])) << '\n';
+            std::cout << power(std::stod(argv[2]), std::stod(argv[3])) << '\n';
         }
         else if (command == "fibonacci")
         {

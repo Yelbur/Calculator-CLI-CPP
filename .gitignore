@@ -1,5 +1,7 @@
 # Build directory
 build/
+out/
+.vs/
 
 # CMake generated files
 CMakeFiles/
