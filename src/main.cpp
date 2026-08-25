@@ -8,19 +8,22 @@
 
 int main(int argc, char* argv[]) {
 
-	if (argc < 2) {
+	if (argc < 2)
+	{
 		print_help();
 		return 1;
 	}
 
 	std::string command = argv[1];
 
-	if (command == "-h" || command == "--help") {
+	if (command == "-h" || command == "--help")
+	{
 		print_help();
 		return 0;
 	}
 
-	if (command == "-v" || command == "--version") {
+	if (command == "-v" || command == "--version")
+	{
 		print_version();
 		return 0;
 	}
@@ -30,79 +33,98 @@ int main(int argc, char* argv[]) {
     {
         if (command == "factorial")
         {
-            if (argc != 3){
+            if (argc != 3)
+            {
                 throw std::invalid_argument("Usage: cli factorial <number>");
 			}
 
-            long long n = std::stoll(argv[2]);
-
-            auto start = std::chrono::high_resolution_clock::now();
-            long long result = factorial(n);
-            auto end = std::chrono::high_resolution_clock::now();
+            long long num = std::stoll(argv[2]);
+            long long result = factorial(num);
 
             std::cout << result << '\n';
-
-            auto duration =
-                std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-
-            std::cout << "Time: " << duration.count() << " us\n";
         }
         else if (command == "add")
         {
-            if (argc != 4){
+            if (argc != 4)
+            {
                 throw std::invalid_argument("Usage: cli add <a> <b>");
 			}
 
-            std::cout << add(std::stod(argv[2]), std::stod(argv[3])) << '\n';
+            double a = std::stod(argv[2]);
+            double b = std::stod(argv[3]);
+
+            std::cout << add(a, b) << '\n';
         }
         else if (command == "subtract")
         {
-            if (argc != 4){
+            if (argc != 4)
+            {
                 throw std::invalid_argument("Usage: cli subtract <a> <b>");
 			}
 
+            double a = std::stod(argv[2]);
+            double b = std::stod(argv[3]);
 
-            std::cout << subtract(std::stod(argv[2]), std::stod(argv[3])) << '\n';
+            std::cout << subtract(a, b) << '\n';
         }
         else if (command == "multiply")
         {
-            if (argc != 4){
+            if (argc != 4)
+            {
                 throw std::invalid_argument("Usage: cli multiply <a> <b>");
 			}
 
-            std::cout << multiply(std::stod(argv[2]), std::stod(argv[3])) << '\n';
+            double a = std::stod(argv[2]);
+            double b = std::stod(argv[3]);
+
+            std::cout << multiply(a, b) << '\n';
         }
         else if (command == "divide")
         {
-            if (argc != 4){
+            if (argc != 4)
+            {
                 throw std::invalid_argument("Usage: cli divide <a> <b>");
 			}
 
-            std::cout << divide(std::stod(argv[2]), std::stod(argv[3])) << '\n';
+            double a = std::stod(argv[2]);
+            double b = std::stod(argv[3]);
+
+            std::cout << divide(a, b) << '\n';
         }
         else if (command == "power")
         {
-            if (argc != 4){
+            if (argc != 4)
+            {
                 throw std::invalid_argument("Usage: cli power <base> <exponent>");
 			}
 
-            std::cout << power(std::stod(argv[2]), std::stod(argv[3])) << '\n';
+            double base = std::stod(argv[2]);
+            double exponent = std::stod(argv[3]);
+
+            std::cout << power(base, exponent) << '\n';
         }
         else if (command == "fibonacci")
         {
-            if (argc != 3){
+            if (argc != 3)
+            {
                 throw std::invalid_argument("Usage: cli fibonacci <number>");
 			}
 
-            std::cout << fibonacci(std::stoll(argv[2])) << '\n';
+            long long num = std::stoll(argv[2]);
+
+            std::cout << fibonacci(num) << '\n';
         }
         else if (command == "gcd")
         {
-            if (argc != 4){
+            if (argc != 4)
+            {
                 throw std::invalid_argument("Usage: cli gcd <a> <b>");
 			}
 
-            std::cout << gcd(std::stoll(argv[2]), std::stoll(argv[3])) << '\n';
+            long long a = std::stoll(argv[2]);
+            long long b = std::stoll(argv[3]);
+
+            std::cout << gcd(a, b) << '\n';
         }
         else
         {
